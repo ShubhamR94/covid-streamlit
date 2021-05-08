@@ -19,7 +19,7 @@ r = requests.get("https://api.covid19india.org/states_daily.json")
 data = pd.DataFrame(r.json()["states_daily"])
 data.columns = data.columns.str.upper()
 ## Changing data type to int for interger value columns
-cols =  list(data.columns[:7]) + list(data.columns[8:32]) + list(data.columns[33:])
+cols =  list(data.columns[:7]) + list(data.columns[9:33]) + list(data.columns[34:])
 for i in cols:
     data[i] = data[i].astype("int64")
 #data

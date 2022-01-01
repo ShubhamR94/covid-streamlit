@@ -113,12 +113,9 @@ temp = 'plotly_dark'
 
 fig1 = px.line(df.iloc[:,1:], labels={'value':'Cases', 'DATE':'Date','STATUS':'Status of cases'},
               title ='Status of cases with time of '+State_list, template = temp)
-#fig1.update_xaxes(nticks = 20,tickangle=30)
-#fig1.update_layout(xaxis_tickformat = '%d %B (%a)<br>%Y')
+
 #fig1.show()
 st.plotly_chart(fig1, use_container_width=True)
-
-#st.write('\n')
 
 fig2 = px.bar(x=data_con.columns[:4], y = data_con.loc[State_list,data_con.columns[:4]],
               color = data_con.columns[:4] ,template = temp,
